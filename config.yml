@@ -1,0 +1,78 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true   # pour tester en local avec « npx decap-server » (inoffensif en ligne)
+locale: fr
+publish_mode: simple
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+# Règle d'or : AUCUN champ n'est obligatoire (required: false partout),
+# pour pouvoir modifier un seul élément et republier.
+collections:
+  - name: site
+    label: Mon site
+    editor:
+      preview: true
+    files:
+      - name: contenu
+        label: Contenu du site
+        file: content/site.json
+        format: json
+        fields:
+          - { label: "Nom du restaurant", name: nom, widget: string, required: false }
+          - { label: "Slogan", name: slogan, widget: string, required: false }
+          - { label: "Couleur principale", name: couleur, widget: color, required: false, hint: "Boutons, prix et accents" }
+          - label: "Page d'accueil"
+            name: accueil
+            widget: object
+            required: false
+            fields:
+              - { label: "Titre", name: titre, widget: string, required: false }
+              - { label: "Texte", name: texte, widget: text, required: false }
+              - { label: "Photo", name: image, widget: image, required: false }
+          - label: "Notre histoire"
+            name: apropos
+            widget: object
+            required: false
+            fields:
+              - { label: "Titre", name: titre, widget: string, required: false }
+              - { label: "Texte", name: texte, widget: text, required: false }
+              - { label: "Photo", name: image, widget: image, required: false }
+          - label: "La carte"
+            name: carte
+            widget: list
+            required: false
+            label_singular: "catégorie"
+            summary: "{{fields.categorie}}"
+            fields:
+              - { label: "Nom de la catégorie", name: categorie, widget: string, required: false }
+              - label: "Plats"
+                name: plats
+                widget: list
+                required: false
+                label_singular: "plat"
+                summary: "{{fields.nom}} – {{fields.prix}}"
+                fields:
+                  - { label: "Nom du plat", name: nom, widget: string, required: false }
+                  - { label: "Description", name: description, widget: string, required: false }
+                  - { label: "Prix", name: prix, widget: string, required: false, hint: "Ex. 14 €" }
+          - label: "Horaires"
+            name: horaires
+            widget: list
+            required: false
+            label_singular: "horaire"
+            summary: "{{fields.jour}} : {{fields.heures}}"
+            fields:
+              - { label: "Jour(s)", name: jour, widget: string, required: false }
+              - { label: "Heures", name: heures, widget: string, required: false }
+          - label: "Contact"
+            name: contact
+            widget: object
+            required: false
+            fields:
+              - { label: "Adresse", name: adresse, widget: text, required: false }
+              - { label: "Téléphone", name: telephone, widget: string, required: false }
+              - { label: "Email", name: email, widget: string, required: false }
+              - { label: "Texte du bouton de réservation", name: reservation_texte, widget: string, required: false }

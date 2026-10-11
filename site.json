@@ -1,0 +1,51 @@
+{
+  "nom": "Chez Marcel",
+  "slogan": "Bistrot de quartier, cuisine du marché",
+  "couleur": "#b83227",
+  "accueil": {
+    "titre": "Ici, on mange comme à la maison",
+    "texte": "Des plats mijotés, des produits de saison et des producteurs du coin. Venez comme vous êtes, on s'occupe du reste.",
+    "image": ""
+  },
+  "apropos": {
+    "titre": "Notre histoire",
+    "texte": "Marcel a ouvert le bistrot en 1998 avec une seule règle : ne servir que ce qu'il aimerait manger lui-même.\nAujourd'hui, c'est sa fille Camille qui tient les fourneaux, avec la même exigence.",
+    "image": ""
+  },
+  "carte": [
+    {
+      "categorie": "Entrées",
+      "plats": [
+        { "nom": "Soupe à l'oignon gratinée", "description": "Bouillon de bœuf, croûtons, comté", "prix": "9 €" },
+        { "nom": "Terrine de campagne", "description": "Cornichons et pain grillé", "prix": "8 €" },
+        { "nom": "Salade de chèvre chaud", "description": "Miel, noix, mesclun", "prix": "10 €" }
+      ]
+    },
+    {
+      "categorie": "Plats",
+      "plats": [
+        { "nom": "Carbonnade flamande", "description": "Mijotée à la bière brune, frites maison", "prix": "19 €" },
+        { "nom": "Magret de canard", "description": "Sauce au miel, purée au beurre", "prix": "22 €" },
+        { "nom": "Risotto aux champignons", "description": "Parmesan, persil", "prix": "17 €" }
+      ]
+    },
+    {
+      "categorie": "Desserts",
+      "plats": [
+        { "nom": "Tarte tatin", "description": "Crème fraîche épaisse", "prix": "8 €" },
+        { "nom": "Café gourmand", "description": "Trois mignardises du jour", "prix": "9 €" }
+      ]
+    }
+  ],
+  "horaires": [
+    { "jour": "Mardi – Samedi", "heures": "12h – 14h30 et 19h – 22h30" },
+    { "jour": "Dimanche", "heures": "12h – 15h" },
+    { "jour": "Lundi", "heures": "Fermé" }
+  ],
+  "contact": {
+    "adresse": "12 rue de la Gare\n59200 Tourcoing",
+    "telephone": "03 20 00 00 00",
+    "email": "contact@chezmarcel.example",
+    "reservation_texte": "Réserver une table"
+  }
+}
